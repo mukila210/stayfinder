@@ -1,0 +1,37 @@
+*{
+  font-family: 'Nunito', sans-serif;
+  margin: 0; padding: 0;
+  outline: none; border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+.btn{
+  margin-right: 16rem;
+  background-color: rgb(0,0,0,0.4);
+  color: beige;
+}
+
+.confirmForm{
+  width: 25rem;
+  z-index: 3;
+  margin-left: 35%;  
+  margin-top: -14rem; 
+  box-shadow: 10px 10px 208px 42px rgba(0,0,0,1);
+  -webkit-box-shadow: 10px 10px 208px 42px rgba(0,0,0,1);
+  -moz-box-shadow: 10px 10px 208px 42px rgba(0,0,0,1);
+}
+
+.cClose{
+  width: 20px;height: 20px;
+  position: absolute;
+  background-color: gray;
+  color: rgb(235, 225, 225);
+  top: 10px; right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2px;
+}

@@ -1,0 +1,29 @@
+
+
+
+[
+     {
+        "id": 1,
+        "image":"images/colonial-style-house-night.png",
+        "city": "Los Angeles, CA",
+        "type": "Entire Home",
+        "price": "$200/night",
+        "date": "jun 15-jun 20"
+    },
+    {
+        "id": 2,
+        "image":"images/view-breathtaking-beach.png",
+        "city": "Los Angeles, CA",
+        "type": "Entire Home",
+        "price": "$200/night",
+        "date": "jun 15-jun 20"
+    },
+    {
+        "id": 3,
+        "image":"images/umbrella-chair.png",
+        "city": "Los Angeles, CA",
+        "type": "Entire Home",
+        "price": "$200/night",
+        "date": "jun 15-jun 20"
+    }
+  ]

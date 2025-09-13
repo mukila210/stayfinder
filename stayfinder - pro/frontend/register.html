@@ -1,0 +1,300 @@
+<!--<input type="text" id="regUser" />
+<input type="password" id="regPass" />
+<button onclick="register()">Register</button>
+
+<script>
+  async function register() {
+    const res = await fetch('http://localhost:5000/api/register', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        username: document.getElementById('regUser').value,
+        password: document.getElementById('regPass').value
+      })
+    });
+
+    if (res.ok) {
+      alert('Registered! Login now.');
+      window.location.href = "login.html";
+    } else {
+      alert("Username already exists!");
+    }
+  }
+</script>
+
+<div  class="registerForm card mb-3 position-fixed d-none" style="z-index: 9999; margin-top: 10%; margin-right: 20%;" >
+
+      <div class="card-body">
+        <form action="" id="registerForm">
+          <h5 class="card-title">Register</h5>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="registerId" placeholder="enter username" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="registerEmail" placeholder="name@example.com">
+          </div>
+
+          <label for="inputPassword5" class="form-label">Password</label>
+          <input type="password" id="registerPassword5" class="form-control" placeholder="password"
+            aria-describedby="passwordHelpBlock">
+
+          <div id="passwordHelpBlock" class="form-text">
+            must be 8-20 characters long.
+          </div>
+
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">submit</button>
+          </div>
+          <span class="close"><i class="fa-solid fa-xmark"></i></span>
+
+        </form>
+      </div>
+    </div>
+
+  
+<script src="app.js"></script>-->
+
+
+
+
+
+
+
+
+
+<!--<div id="listings"></div>
+
+<div class="room">
+  <h2>Room 1 - Beach View</h2>
+  <p>Cozy beach room with AC</p>
+  <a href="book1.html?roomId=1">View Room</a>
+</div>
+
+<div class="room">
+  <h2>Room 1 - Beach View</h2>
+  <p>Cozy beach room with AC</p>
+  <a href="book1.html?roomId=2">View Room</a>
+</div>
+
+<div class="room">
+  <h2>Room 1 - Beach View</h2>
+  <p>Cozy beach room with AC</p>
+  <a href="book1.html?roomId=3">View Room</a>
+</div>
+
+
+  
+const container = document.getElementById("listingContainer");
+
+data.forEach(room => {
+  const col = document.createElement("div");
+  col.className = "col-md-4 mb-4";  // This ensures 3 in row
+
+  col.innerHTML = `
+    <div class="card">
+      <img src="${room.image}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">${room.name}</h5>
+        <p>${room.type}<br><strong>${room.price}</strong><br>${room.dates}</p>
+        <a href="book.html?roomId=${room.id}" class="btn btn-primary">Book Now</a>
+      </div>
+    </div>
+  `;
+
+  container.appendChild(col);
+});
+
+
+
+
+
+
+
+
+
+<input type="text" id="signupUser" />
+<input type="password" id="signupPass" />
+<button onclick="signup()">signup</button>
+
+<script>
+  async function signup() {
+    const res = await fetch('http://localhost:5000/api/signup', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        username: document.getElementById('signupUser').value,
+        password: document.getElementById('signupPass').value
+      })
+    });
+
+    if (res.ok) {
+      alert('signup success!');
+      window.location.href = "listings.html";
+    } else {
+      alert("Invalid signup");
+    }
+  }
+</script>
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('http://localhost:3000/api/listings')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      const container = document.getElementById('listingContainer');
+      container.innerHTML = ''; // Clear existing content if any
+
+      data.forEach(listing => {
+        const card = document.createElement('div');
+        card.className = 'col-md-4 mb-4';
+        card.innerHTML = `
+          <a href="book.html?roomId=${listing.id}" style="text-decoration: none; color: inherit;">
+            <div class="card h-100">
+              <img src="${listing.image}" class="card-img-top" alt="Room Image">
+              <div class="card-body">
+                <h5 class="card-title">${listing.location}</h5>
+                <p class="card-text">${listing.type}</p>
+                <p class="text-success">$${listing.price}/Night</p>
+                <p class="card-text"><small>${listing.date}</small></p>
+              </div>
+            </div>
+          </a>
+        `;
+        container.appendChild(card);
+      });
+    })
+    .catch(error => {
+      console.error('Error loading listings:', error);
+    });
+});
+
+
+/*const roomIdInput = document.getElementById("roomId");*/
+
+/*  .then(res => res.json())
+      .then(data => {
+        alert(data.message);
+        document.getElementById("confirmForm").reset();
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Booking failed");
+      });
+    });*/
+
+
+  
+
+
+  /*document.addEventListener('DOMContentLoaded', () => {
+  const checkin = localStorage.getItem('checkin');
+  const checkout = localStorage.getItem('checkout');
+  const adults = localStorage.getItem('adults');
+  const children = localStorage.getItem('children');
+
+  document.getElementById('Date').textContent = checkin;
+
+  const form = document.getElementById('confirmForm');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const bookedName = document.getElementById('bookedName').value;
+
+    if (!bookedName || !checkin) {
+      alert("Please complete all fields");
+      return;
+    }
+
+    const bookingData = {
+      bookedName,
+      checkin,
+      checkout,
+      adults,
+      children
+    };
+
+    fetch('http://localhost:3000/api/book', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(bookingData)
+    })
+    .then(res => {
+      if (!res.ok) throw new Error("Booking failed");
+      return res.json();
+    })
+    .then(() => {
+      alert(`Thank you ${bookedName}, your stay from ${checkin} is booked!`);
+      form.reset();
+      localStorage.clear(); 
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Something went wrong");
+    });
+  });
+});*/
+
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  async function loadDetail() {
+    const res = await fetch(`http://localhost:5000/api/listings/${id}`);
+    const data = await res.json();
+    document.body.innerHTML += `
+      <h1>${data.title}</h1>
+      <p>${data.location} - ₹${data.price}</p>
+      <button onclick="bookRoom()">Submit</button>
+    `;
+  }
+
+  async function bookRoom() {
+    const user = prompt("Your Name");
+    const date = prompt("Booking Date (yyyy-mm-dd)");
+    const res = await fetch(`http://localhost:5000/api/book/${id}`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ user, date })
+    });
+
+    if (res.ok) {
+      alert("checking Confirmed!");
+    }
+  }
+
+  loadDetail();
+</script>
+
+/*app.get('/api/listings/:id', (req, res) => {
+  const id = req.params.id;
+  const listing = listings.find(l => l.id == id);
+  listing ? res.json(listing) : res.status(404).json({ message: "Not found" });
+});*/
+
+/*app.post('/api/login', (req, res) => {
+  const { username, password } = req.body;
+  const user = users.find(u => u.username === username && u.password === password);
+  if (user) {
+    res.json({ success: true });
+  } else {
+    res.status(401).json({ success: false, message: "Invalid credentials" });
+  }
+});*/-->
+
+
+
+
+
+
+
